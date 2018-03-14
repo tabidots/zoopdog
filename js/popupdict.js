@@ -243,7 +243,7 @@ window.onload = function() {
     entries: '++,vn,en',
   })
 
-  const jsonURL = 'js/vnedict.json'
+  const jsonURL = 'zd-extension/js/vnedict.json'
 
   db.on('ready', function () {
     return db.entries.count(function (count) {
