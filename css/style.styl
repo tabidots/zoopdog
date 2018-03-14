@@ -1,0 +1,173 @@
+// out: style.css
+
+@import url('//fonts.googleapis.com/css?family=Fira+Sans:300,300i,800')
+@import colors
+
+body, html
+  background #F2ECE1
+  -webkit-backface-visibility hidden
+  margin 0
+  padding 0
+  font-family "Fira Sans", sans-serif
+  font-weight 300
+  height calc(100% - 40px) // 20px vertical padding on #container
+*, *:before, *:after
+  box-sizing border-box
+
+h1.main-header
+  font-weight 800
+  background $darkneutral
+  color $verylightneutral
+  padding 10px
+  margin 10px
+  display inline-block
+  border-radius 10px 10px 10px 10px
+p
+  font-size 11pt
+  line-height 1.5em
+  &.subtitle
+    font-style italic
+    .emph
+      background $verylightred
+      color $darkred
+      padding 3px
+      border-radius 2px 2px 2px 2px
+
+a
+  text-decoration none
+  color $darkblue
+  font-weight 800
+  transition color 0.3s ease
+  &:hover
+    transition none
+    color $lightred
+
+#chrome-store-badge
+  padding 10px
+  border-radius 10px 10px 10px 10px
+  width 226px
+  height 78px
+  margin 30px auto
+  background $darkblue
+  transition none
+  &:hover
+    transition background 0.3s ease
+    background $lightred
+
+#container
+  width 500px
+  margin 40px auto 20px
+  text-align center
+  height 100%
+  padding 1px
+  #logo
+    margin 5vh auto 25px
+    width 200px
+    height 200px
+    background url('../img/zoopdog_clearbg.png')
+    background-repeat no-repeat
+    background-size cover
+  #instructions
+    display none
+    text-align left
+    font-size 14px
+    line-height 1.75em
+    width 90%
+    margin 0 auto
+    padding 10px 0
+    background url('../img/zoopdog_clearbg.png')
+    background-repeat no-repeat
+    background-size 70px 70px
+    background-position right
+    .key
+      background #bbb
+      color white
+      font-size 9pt
+      font-weight bold
+      font-family Helvetica, Arial, sans-serif
+      padding 4px
+      border-radius 2px 2px 2px 2px
+  #textfield
+    width 500px
+    margin 0 auto
+    max-height: calc(100% - 150px)
+    overflow-y scroll
+    -webkit-user-select auto
+    user-select all
+    opacity 0
+  #textcredit, #textfield, #instructions
+    transition all 0.3s ease
+  select
+    margin 0 0 0 10px
+    vertical-align top
+
+.pace-running #textfield, .pace-running #textcredit
+  opacity 0
+
+#zoopdog-popup
+  margin-top 5px
+  background white
+  border none
+  -webkit-box-shadow 4px 4px 19px -2px rgba(0,0,0,0.47)
+  -moz-box-shadow 4px 4px 19px -2px rgba(0,0,0,0.47)
+  box-shadow 4px 4px 19px -2px rgba(0,0,0,0.47)
+  border-radius 10px 10px 10px 10px
+  line-height 1em
+
+.textbox
+  background white
+  font-family "Fira Sans", sans-serif
+  line-height 2em
+  font-size 14pt
+  text-align left
+  padding 10px
+  outline 0px
+  border-radius 10px 10px 10px 10px
+  border 5px solid $lightblue
+  &:focus, &:hover
+    border-color $lightred
+
+nav
+  position fixed
+  background #B6638F
+  width 100%
+  top 0
+  padding 10px
+  left 0
+  height 40px
+  z-index 500000000
+  text-align center
+  a
+    font-family "Fira Sans", sans-serif
+    color $verylightred
+    font-weight 800
+    margin 0 5px
+    padding 2px 5px
+    border-radius 5px 5px 5px 5px
+    &:hover
+      color $darkred
+      padding 2px 5px
+    &.active, &:active
+      color $darkred
+      background $verylightred
+
+footer
+  width 100%
+  position fixed
+  bottom 0
+  & > div
+    margin 0 auto
+    bottom 0
+    background $lightneutral
+    padding 1px
+    width 50%
+    height 25px
+    text-align center
+    border-radius 20px 20px 0 0
+    transition height 0.3s ease
+    z-index 30000000
+    &:hover
+      height 70px
+  p
+    font-size 12px
+    margin .3em

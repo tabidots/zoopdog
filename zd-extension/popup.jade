@@ -1,0 +1,27 @@
+//output: popup.html, pretty: true
+
+doctype html
+html
+  head
+    meta(http-equiv='content-type', content='text/html;charset=UTF-8')
+    meta(charset='utf-8')
+    link(rel='stylesheet', type='text/css', href='css/zoopdog.css')
+          
+  body.zoopdog-cpanel
+    h1 Zoopdog
+    #zoopdog-switch-wrapper
+      input#zoopdog-switch(type="checkbox", checked)
+      label(for="zoopdog-switch") Toggle
+    p 
+      | Show pronunciation 
+      br 
+      | in which dialect?
+    select#dialect-menu
+      option(value="hanoi") Hà Nội
+      option(value="quangnam") Quảng Nam
+      option(value="saigon") Sài Gòn      
+    p
+      a(href="#" id="open-pron-guide") guide to symbols
+    p
+      a(href="#" id="zoopdog-reload") reload dictionary
+    script(src="js/popup.js")

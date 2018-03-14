@@ -1,0 +1,184 @@
+.zoopdog-word {
+  font-family: "DejaVuSansMono-Regular", sans-serif;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.zoopdog-word .zd-tone-canvas {
+  height: 200%;
+  width: 100%;
+}
+.zoopdog-word .source-word,
+.zoopdog-word .source-ipa {
+  display: none;
+  font-size: 10pt;
+  font-weight: 300;
+  position: absolute;
+  left: 11px;
+}
+.zoopdog-word .source-word {
+  font-family: "Fira Sans", sans-serif;
+  top: -15px;
+}
+.zoopdog-word .source-ipa {
+  font-family: "Charis SIL", "CharisSILW", "Lucida Grande", "Lucida Sans Unicode", "Arial Unicode MS", sans-serif;
+  top: -20px;
+}
+.zoopdog-word .phonemic-unit {
+  display: inline;
+  vertical-align: middle;
+  background: #bfb5af;
+  color: #bfb5af;
+  margin: 0;
+  padding: 0;
+}
+.zoopdog-word .phonemic-unit:first-child {
+  border-radius: 10px 0 0 10px;
+  padding-left: 10px;
+}
+.zoopdog-word .phonemic-unit:last-child {
+  border-radius: 0 10px 10px 0;
+  padding-right: 10px;
+}
+.zoopdog-word .phonemic-unit:only-child {
+  border-radius: 10px 10px 10px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.zoopdog-word .phonemic-unit.short-vowel {
+  background: #5bb1b7;
+  color: #5bb1b7;
+}
+.zoopdog-word .phonemic-unit.glide {
+  background: #ece2d0;
+  color: #ece2d0;
+}
+.zoopdog-word .phonemic-unit.glide .super {
+  font-size: 0.75em;
+  vertical-align: top;
+  margin: 2px;
+}
+.zoopdog-word .phonemic-unit.long-vowel,
+.zoopdog-word .phonemic-unit.long-consonant {
+  padding-right: 20px;
+}
+.zoopdog-word .phonemic-unit.long-vowel {
+  background: #0685aa;
+  color: #0685aa;
+}
+.zoopdog-word .phonemic-unit.long-consonant {
+  background: #9b2966;
+  color: #9b2966;
+}
+.block .zoopdog-word:hover .source-word {
+  display: block;
+}
+.block .zoopdog-word:hover .source-ipa {
+  display: none;
+}
+.block .zoopdog-word:active .source-word {
+  display: none;
+}
+.block .zoopdog-word:active .source-ipa {
+  display: block;
+}
+.phonemes.blank-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.phonemes.blank-bg .phonemic-unit {
+  color: #fff;
+  background: none;
+}
+#legend {
+  font-family: "Fira Sans", sans-serif;
+  width: 600px;
+  margin: 50px auto 20px;
+}
+#legend h2 {
+  text-align: center;
+  margin: 20px 5px 0;
+  background: #5bb1b7;
+  color: #96cdd1;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+#legend dl {
+  border-radius: 0 0 10px 10px;
+  padding: 10px 20px 10px;
+  margin: 0 5px;
+  background: #ece2d0;
+  user-select: none;
+  cursor: default;
+}
+#legend dl .note {
+  font-style: italic;
+  font-size: 10pt;
+  margin-top: 0px;
+}
+#legend dl .single-phoneme {
+  font-family: "DejaVuSansMono-Regular", sans-serif;
+  font-style: normal;
+  font-size: 14pt;
+  display: inline-block;
+  vertical-align: middle;
+  background: #bfb5af;
+  color: #fff;
+  margin: 0 5px;
+  padding: 0 5px;
+  border-radius: 5px 5px 5px 5px;
+  transition: all 0.3s ease;
+}
+#legend dl .single-phoneme[audio]:after {
+  padding-left: 5px;
+  content: "🔊";
+}
+#legend dl .single-phoneme[audio]:hover {
+  transition: none;
+  cursor: pointer;
+  background: #0685aa;
+}
+#legend dl .single-phoneme:first-child {
+  margin-left: 0px;
+}
+#legend dl dt {
+  margin: 5px 0;
+}
+#legend dl dt .zoopdog-word {
+  font-size: 16pt;
+  margin: 15px 0;
+}
+#legend dl dd {
+  font-size: 11pt;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  text-align: justify;
+  line-height: 1.5em;
+}
+#legend dl dd .single-phoneme {
+  font-size: 11pt;
+}
+#legend dl dd .example-word {
+  font-weight: 800;
+}
+#legend dl dd .example-word .highlight {
+  color: #9b2966;
+  border-bottom: 2px #9b2966 solid;
+}
+#legend dl label {
+  float: left;
+  display: block;
+  padding-top: 20px;
+  width: 40%;
+}
+.zd-pronunciation {
+  white-space: nowrap;
+}
+.zd-pronunciation .zoopdog-word {
+  font-size: 16pt;
+  user-select: none;
+  cursor: default;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

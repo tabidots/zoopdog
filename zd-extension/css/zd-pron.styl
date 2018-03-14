@@ -1,0 +1,154 @@
+// out: zd-pron.css
+
+.zoopdog-word
+  font-family "DejaVuSansMono-Regular", sans-serif
+  position relative
+  display inline-block
+  margin-bottom 30px
+  .zd-tone-canvas
+    height 200%
+    width 100%
+  .source-word, .source-ipa
+    display none
+    font-size 10pt
+    font-weight 300
+    position absolute
+    left 11px
+  .source-word
+    font-family "Fira Sans", sans-serif
+    top -15px
+  .source-ipa
+    font-family "Charis SIL", "CharisSILW", "Lucida Grande", "Lucida Sans Unicode", "Arial Unicode MS", sans-serif
+    top -20px
+  .phonemic-unit
+    display inline
+    vertical-align middle
+    background #BFB5AF
+    color #BFB5AF
+    margin 0
+    padding 0
+    &:first-child
+      border-radius 10px 0 0 10px
+      padding-left 10px
+    &:last-child
+      border-radius 0 10px 10px 0
+      padding-right 10px
+    &:only-child
+      border-radius 10px 10px 10px 10px
+      padding-left 10px
+      padding-right 10px
+    &.short-vowel
+      background #5BB1B7
+      color #5BB1B7
+    &.glide
+      background #ECE2D0
+      color #ECE2D0
+      & .super
+        font-size .75em
+        vertical-align top
+        margin 2px
+    &.long-vowel, &.long-consonant
+      padding-right 20px
+    &.long-vowel
+      background #0685AA
+      color #0685AA
+    &.long-consonant
+      background #9B2966
+      color #9B2966
+
+.block .zoopdog-word
+  &:hover
+    .source-word
+      display block
+    .source-ipa
+      display none
+  &:active
+    .source-word
+      display none
+    .source-ipa
+      display block
+
+.phonemes.blank-bg
+  position absolute
+  left 0
+  top 0
+  .phonemic-unit
+    color white
+    background none
+
+#legend
+  font-family "Fira Sans", sans-serif
+  width 600px
+  margin 50px auto 20px
+  h2
+    text-align center
+    margin 20px 5px 0
+    background #5BB1B7
+    color #96CDD1
+    padding 10px
+    border-radius 10px 10px 0 0
+  dl
+    border-radius 0 0 10px 10px
+    padding 10px 20px 10px
+    margin 0 5px
+    background #ECE2D0
+    user-select none
+    cursor default
+    .note
+      font-style italic
+      font-size 10pt
+      margin-top 0px
+    .single-phoneme
+      font-family "DejaVuSansMono-Regular", sans-serif
+      font-style normal
+      font-size 14pt
+      display inline-block
+      vertical-align middle
+      background #BFB5AF
+      color white
+      margin 0 5px
+      padding 0 5px
+      border-radius 5px 5px 5px 5px
+      transition all 0.3s ease
+      &[audio]:after
+        padding-left 5px
+        content "🔊"
+      &[audio]:hover
+        transition none
+        cursor pointer
+        background #0685AA
+      &:first-child
+        margin-left 0px
+    dt
+      margin 5px 0
+      .zoopdog-word
+        font-size 16pt
+        margin 15px 0
+    dd
+      font-size 11pt
+      margin-bottom 15px
+      margin-right 20px
+      text-align justify
+      line-height 1.5em
+      .single-phoneme
+        font-size 11pt
+      .example-word
+        font-weight 800
+        .highlight
+          color #9B2966
+          border-bottom 2px #9B2966 solid
+    label
+      float left
+      display block
+      padding-top 20px
+      width 40%
+
+// within popup
+.zd-pronunciation
+  white-space nowrap
+  .zoopdog-word
+    font-size 16pt
+    user-select none
+    cursor default
+    margin-top 10px
+    margin-bottom 20px

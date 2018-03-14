@@ -1,0 +1,35 @@
+//output: homophones.html, pretty: false
+
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    link(rel='stylesheet', type='text/css', href='css/pronunciation.css')
+    link(rel='stylesheet', type='text/css', href='zd-extension/css/zd-pron.css')
+    link(rel='stylesheet', type='text/css', href='zd-extension/css/fonts/fonts.css')
+    title Zoopdog homophone generator for Vietnamese
+    include meta
+    
+  body
+    include includes
+    #main
+      #input-wrapper
+        textarea#input.textbox Giảm giá là gì? Nguyễn Hoàng là ai?
+      #toggle-row
+        .button(dialect="hanoi") Hà Nội
+        .button(dialect="quangnam") Quảng Nam
+        .button(dialect="saigon") Sài Gòn
+      #output-row
+        .block(dialect="hanoi")
+          h1 Hà Nội
+          .pron.homophones
+        .block(dialect="quangnam")
+          h1 Quảng Nam
+          .pron.homophones
+        .block(dialect="saigon")
+          h1 Sài Gòn
+          .pron.homophones
+    script(type="text/javascript", src="zd-extension/js/zd-pron-data.js")
+    script(type="text/javascript", src="zd-extension/js/zd-pron-functions.js")
+    script(type="text/javascript", src="zd-extension/js/realwords.js")
+    script(type="text/javascript", src="js/zd-pron.js")

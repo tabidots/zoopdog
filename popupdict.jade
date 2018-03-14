@@ -1,0 +1,50 @@
+//output: popupdict.html, pretty: false
+
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    link(rel='stylesheet', type='text/css', href='css/pace.css')
+    include meta
+    script(src='zd-extension/js/lib/dexie.min.js') 
+    script(src='zd-extension/js/lib/handlebars.min.js') 
+    script(type='text/javascript').
+      paceOptions = {
+        elements: {
+          selectors: ['.dunzo']
+        }
+      }
+    script(src='js/lib/pace.min.js') 
+    title Zoopdog, a Vietnamese-English popup dictionary
+
+  body
+    include includes
+    #container.pace
+      #loading-message
+        p Downloading dictionary database. Please wait...
+      #instructions
+        div
+          | Hover over the text below or paste text of your own.
+          br
+          | Use the 
+          span.key Shift
+          | &nbsp;key to lock/unlock cards for scrolling.
+        div
+          | Show pronunciation in which dialect?
+          select#dialect-menu
+            option(value="hanoi") Hà Nội
+            option(value="quangnam") Quảng Nam
+            option(value="saigon") Sài Gòn   
+      #textfield.textbox(spellcheck="false", contentEditable="true")
+        | Buổi sáng khi thức dậy, ta biết rằng ta có hai mươi bốn giờ trước mặt để sống. Đó là một món quà quý giá. Ta sống như thế nào để có an lạc và hạnh phúc trong suốt hai mươi bốn giờ, mà người khác cũng nhờ đó mà có an lạc và hạnh phúc.
+        br
+        br
+        | An lạc có mặt trong ta ngay tại đây trong giờ phút này, trong mỗi vật và mỗi việc ta làm hay ta thấy. Vấn đề là ta có biết tiếp xúc với nó không. Bầu trời xanh ở ngay trước mắt ta, ta đâu cần phải đi đâu xa để thưởng thức trời xanh. Ta cũng không cần rời thành phố ta ở mới thấy được vẻ đẹp của đôi mắt trẻ thơ. Không khí trong lành ta thở đã có thể cho ta biết bao hạnh phúc rồi.
+      p#textcredit
+        | The sample text is an excerpt from 
+        em Peace Is Every Step 
+        | by Thích Nhất Hạnh.
+    
+    script(src='zd-extension/js/highlighter.js')
+    script(src='zd-extension/js/showframe.js')
+    script(src='js/popupdict.js')

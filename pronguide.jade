@@ -1,0 +1,445 @@
+//output: pronguide.html, pretty: false
+
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    link(rel='stylesheet', type='text/css', href='css/pronunciation.css')
+    link(rel='stylesheet', type='text/css', href='zd-extension/css/zd-pron.css')
+    link(rel='stylesheet', type='text/css', href='zd-extension/css/fonts/fonts.css')
+    title Zoopdog pronunciation guide generator for Vietnamese—guide to symbols
+    include meta
+    
+  body
+    nav
+      a(href="#consonants") Consonants
+      a(href="#vowels") Vowels
+      a(href="#length") Length
+      a(href="#register") Tones, Phonation, and Stops
+    #legend
+      a#consonants
+      h2 Consonants
+      dl
+        p.note 
+          | Note: The letters in blocks represent the symbols used in the Zoopdog pronunciation guide, and NOT letters occurring in actual Vietnamese words. Additionally, these descriptions are merely an approximation and no substitute for the help of a native speaker.
+        dt 
+          span.single-phoneme b
+          span.single-phoneme d
+          span.single-phoneme f
+          span.single-phoneme g
+          span.single-phoneme h
+          span.single-phoneme l
+          span.single-phoneme m
+          span.single-phoneme n
+          span.single-phoneme s
+          span.single-phoneme v
+          span.single-phoneme w
+          span.single-phoneme z
+        dd As in English.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/c/c4/Voiceless_alveolo-palatal_affricate.ogg") ᴄʜ
+          | &nbsp;(Hà Nội)
+        dd 
+          | Unaspirated, as in English&nbsp;
+          span.example-word
+            | mis
+            span.highlight ch
+            | ief
+          | , but a little further forward in the mouth, as in Japanese&nbsp;
+          span.example-word
+            span.highlight ch
+            | ikuwa
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/e/e9/Voiceless_retroflex_affricate.ogg") ᴄʜ
+          | &nbsp;(Quảng Nam / Sài Gòn)
+        dd
+          | Unaspirated, with the tongue curled back, and with less friction.
+          | It feels more like throwing your tongue forward than pushing air out between the tongue and the roof of the mouth.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/4/47/Voiced_velar_fricative.ogg") ġ
+          | &nbsp;(Hà Nội)
+        dd 
+          | A gargling sound, as in French&nbsp;
+          span.example-word
+            span.highlight r
+            | ôle
+          | &nbsp;or Arabic&nbsp;
+          span.example-word
+            span.highlight gh
+            | areeb
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/e/e3/Voiceless_velar_plosive.ogg") k
+        dd 
+          | Unaspirated, as in 
+          span.example-word 
+            | s
+            span.highlight k
+            | ip
+          | &nbsp;or Spanish 
+          span.example-word 
+            span.highlight c
+            | orazón
+          | . Note that
+          span.single-phoneme k
+          | at the end of a word is&nbsp;
+          a(href="//en.wikipedia.org/wiki/No_audible_release", target="_blank") unreleased
+          | , as in
+          span.example-word 
+            | a
+            span.highlight c
+            | tor
+          | .
+        dt 
+          span.single-phoneme k’
+          | &nbsp;(Quảng Nam / Sài Gòn)
+        dd 
+          | Aspirated, as in 
+          span.example-word 
+            span.highlight c
+            | oal
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/0/0f/Voiceless_velar_fricative.ogg") ᴋʜ
+          | &nbsp;(Hà Nội)
+        dd
+          | As in Scottish 
+          span.example-word 
+            | lo
+            span.highlight ch
+          | &nbsp;or German 
+          span.example-word 
+            | Ba
+            span.highlight ch
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/5/5f/Voiceless_labial-velar_plosive.ogg") k*
+        dd 
+          | Final (
+          a(href="//en.wikipedia.org/wiki/No_audible_release", target="_blank") unreleased
+          | )&nbsp;
+          span.single-phoneme k
+          | &nbsp;with lips closed, like pronouncing
+          span.single-phoneme k
+          | and
+          span.single-phoneme p
+          | simultaneously, and cheeks puffed.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/3/39/Velar_nasal.ogg") ng
+        dd 
+          | As in English
+          span.example-word 
+            | si
+            span.highlight ng
+          | . Note that this sound often occurs at the&nbsp;
+          em beginnings
+          | &nbsp;of words, not just the ends, as in English.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/9/99/Labial-velar_nasal_stop.ogg") ng*
+        dd
+          | Final (
+          a(href="//en.wikipedia.org/wiki/No_audible_release", target="_blank") unreleased
+          | )&nbsp;
+          span.single-phoneme ng
+          | &nbsp;with lips closed, like pronouncing
+          span.single-phoneme ng
+          | and
+          span.single-phoneme m
+          | simultaneously, and cheeks puffed.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/4/46/Palatal_nasal.ogg") ny
+        dd 
+          | As in English
+          span.example-word 
+            | ju
+            span.highlight ni
+            | or
+          | . Note that this sound can come before
+          span.single-phoneme w
+          | , as in the word 
+          em nhoài
+          | .
+        dt 
+          span.single-phoneme p
+        dd
+          | Only occurs at the ends of words, where it is&nbsp;
+          a(href="//en.wikipedia.org/wiki/No_audible_release", target="_blank") unreleased
+          | , as in
+          span.example-word 
+            | ca
+            span.highlight p
+            | tain
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/d/d2/Retroflex_approximant.ogg") ᴙ
+          | &nbsp;(Quảng Nam / Sài Gòn)
+        dd 
+          | As in Mandarin 
+          span.example-word 
+            | r
+            span.highlight ǒu
+          | . Roughly similar to the American English 
+          span.example-word 
+            | r
+            span.highlight ed
+          | , except with the tongue tensed and curled far back.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/c/cc/Voiceless_alveolar_retracted_sibilant.ogg") sh
+          | &nbsp;(Quảng Nam / Sài Gòn)
+        dd 
+          | Further forward in the mouth than in English. Depending on the speaker, this sound can vary between European Spanish
+          span.example-word 
+            span.highlight s
+            | alud
+          | &nbsp;(with the tip of the tongue flattened slightly) or Mandarin&nbsp;
+          span.example-word
+            span.highlight x
+            | īn
+          | .
+        dt 
+          span.single-phoneme t
+        dd Unaspirated, with the tip of the tongue against the back of the top teeth, as in Spanish and Japanese&nbsp;
+          span.example-word
+            span.highlight t
+            | oro
+          | . Note that
+          span.single-phoneme t
+          | at the end of a word is&nbsp;
+          a(href="//en.wikipedia.org/wiki/No_audible_release", target="_blank") unreleased
+          | , as in
+          span.example-word 
+            | though
+            span.highlight t
+            | ful
+          | .
+        dt 
+          span.single-phoneme t’
+        dd Aspirated, with the tip of the tongue against the back of the top teeth, as in Hindi&nbsp;
+          span.example-word
+            span.highlight th
+            | ālī
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/5/5d/Voiceless_palatal_plosive.ogg") ᴛʏ
+          | &nbsp;(Quảng Nam / Sài Gòn)
+        dd 
+          | This sound does not have any equivalent in well-known Western languages. It is like&nbsp;
+          span.single-phoneme ᴄʜ
+          | above, but with the tongue flat, so that the sides of the tongue touch the side teeth. The tip of the tongue does not make contact with the roof of the mouth.
+      a#vowels
+      h2 Vowels
+      dl
+        p.note Note: For ease of reading, some symbols have been borrowed from the IPA for different sound values. In a few cases, the original Vietnamese vowel letter was used, to eliminate the need to learn too many new symbols. Additionally, these descriptions are merely an approximation and no substitute for the help of a native speaker.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/b/bc/En-uk-hat.ogg") a
+        dd Roughly as in American English&nbsp;
+          span.example-word
+            | f
+            span.highlight a
+            | ther
+          | , but often slightly further forward in the mouth, as in British English&nbsp;
+          span.example-word
+            | h
+            span.highlight a
+            | t
+          &nbsp;or French&nbsp;
+          span.example-word
+            | p
+            span.highlight a
+            | tte
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/e/e5/Open_back_unrounded_vowel.ogg") å
+        dd As in British English&nbsp;
+          span.example-word
+            | b
+            span.highlight a
+            | th
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/9/92/Open-mid_back_unrounded_vowel.ogg") ɐ
+        dd As in American and British English&nbsp;
+          span.example-word
+            span.highlight u
+            | nder
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/c/c9/Near-open_front_unrounded_vowel.ogg") æ
+        dd 
+          | As in American English&nbsp;
+          span.example-word
+            span.highlight a
+            | pple
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/6/6c/Close-mid_front_unrounded_vowel.ogg") ê
+        dd 
+          | Same as the Vietnamese letter. As in French 
+          span.example-word
+            | sant
+            span.highlight é
+          | . (However, note that the Vietnamese letter&nbsp;
+          strong ê
+          | &nbsp;at the end of a word, such as&nbsp;
+          em Lê
+          | , represents a diphthongized sound as in English&nbsp;
+          span.example-word
+            | d
+            span.highlight ay
+          | . This is reflected in the guide.)
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/7/71/Open-mid_front_unrounded_vowel.ogg") ĕ
+        dd As in American and British English&nbsp;
+          span.example-word
+            | g
+            span.highlight e
+            | t
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/d/d9/Mid-central_vowel.ogg") ə
+        dd Usually as in American and British English&nbsp;
+          span.example-word
+            span.highlight a
+            | bout
+          | , but generally used to represent a relaxed-mouth transitioning vowel sound.
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/2/26/Close-mid_back_unrounded_vowel.ogg") ə˞
+        dd
+          | Similar to&nbsp;
+          span.single-phoneme ə
+          | , but further back in the mouth. No equivalent in well-known Western languages. As in Mandarin&nbsp;
+          span.example-word
+            | h
+            span.highlight ē
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/9/91/Close_front_unrounded_vowel.ogg") i
+        dd As in American and British English&nbsp;
+          span.example-word
+            | f
+            span.highlight ee
+            | t
+          | .
+        dt
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/4/4c/Near-close_near-front_unrounded_vowel.ogg") ɪ
+        dd As in American and British English&nbsp;
+          span.example-word
+            | b
+            span.highlight i
+            | g
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/8/84/Close-mid_back_rounded_vowel.ogg") o
+        dd A pure vowel, as in Spanish&nbsp;
+          span.example-word
+            | h
+            span.highlight o
+            | mbre
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/0/02/Open-mid_back_rounded_vowel.ogg") ɔ
+        dd As in American English&nbsp;
+          span.example-word
+            | th
+            span.highlight ough
+            | t
+          | . Note that the combination
+          span.single-phoneme ɔi
+          | sounds exactly like English&nbsp;
+          span.example-word
+            | b
+            span.highlight oy
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/5/5d/Close_back_rounded_vowel.ogg") u
+        dd As in American and British English&nbsp;
+          span.example-word
+            | p
+            span.highlight oo
+            | l
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/e/e8/Close_back_unrounded_vowel.ogg") ư
+        dd 
+          | Same as the Vietnamese letter; no equivalent in any well-known Western languages. Roughly like&nbsp;
+          span.single-phoneme u
+          | with the lips unrounded, as in Korean 
+          span.example-word
+            span.highlight eu
+            | msik
+          | .
+        dt 
+          span.single-phoneme(audio="https://upload.wikimedia.org/wikipedia/commons/d/d5/Near-close_near-back_rounded_vowel.ogg") ŭ
+        dd As in American and British English&nbsp;
+          span.example-word
+            | p
+            span.highlight u
+            | sh
+          | .
+      a#length
+      h2 Length
+      dl
+        p.note
+          | It may be helpful to refer to&nbsp;
+          a(href="//www.youtube.com/watch?v=DEGh3-TAFS0", target="_blank") this video
+          | , which informed and inspired this style of notating phoneme length.
+          
+        label Single long vowel 
+        dt.zd.toneless la, nghìn
+        
+        label Short vowel(s)
+        dt.zd.toneless mua
+        dd Short vowels occupy roughly half the time of a long vowel.
+        
+        label Long vowel, normal ending
+        dt.zd.toneless mai, mang
+        dd These combinations are basically pronounced as you would expect them to be.
+        
+        label Short vowel, long ending
+        dt.zd.toneless may, măng
+        dd 
+          | In these combinations, the vowel is cut short as if you are skipping over the vowel to get to the consonant. Vowel and nasal endings (&nbsp;
+          .single-phoneme m
+          .single-phoneme n
+          .single-phoneme ng
+          | ) should be held for twice the normal length, as if they are a long vowel. Such “early endings” are shown in dark red to draw your attention.
+          
+        label Transition vowels
+        dt.zd.toneless quốc, lê, tưng
+        dd These vowels are pronounced very short and connect the neighboring sounds, as indicated by their transitioning background. In many cases, they are responsible for the “Southern drawl” sound of many Vietnamese words.
+        
+      a#register
+      h2 Tones, Phonation, and Stops
+      dl
+        label Tone trajectories
+        dt.zd.saigon ma má mã mà 
+        dd There are five levels of pitch.
+        label Creaky voice
+        dt.zd.saigon học
+        dd 
+          | Dotted lines represent words pronounced with tenseness in the vocal chords. (
+          a(href="//en.wikipedia.org/wiki/Creaky_voice") Wikipedia
+          | )
+        label Breathy voice
+        dt.zd gà
+        dd 
+          | Thick lines represent words pronounced with slackness in the vocal chords, as if you are yawning. (
+          a(href="//en.wikipedia.org/wiki/Murmured_voice") Wikipedia
+          | )
+        label Glottal stops
+        dt.zd chị sữa ai bò
+        dd
+          | The pause in the word&nbsp;
+          span.example-word uh-oh
+          | &nbsp;is an example of a glottal stop. In Vietnamese, glottal stops can interrupt, end, or even begin words.
+          | For example, their co-occurence with
+          span.single-phoneme b
+          | and
+          span.single-phoneme d
+          | at the beginnings of words in the Hanoi accent is what gives them their distinctive sound.
+    script(type="text/javascript", src="zd-extension/js/lib/chroma.min.js")
+    script(type="text/javascript", src="zd-extension/js/zd-pron-data.js")
+    script(type="text/javascript", src="zd-extension/js/zd-pron-functions.js")
+    script(type="text/javascript", src="zd-extension/js/zd-pron-drawtones.js")
+    script(type="text/javascript", src="zd-extension/js/zd-pronguide.js")

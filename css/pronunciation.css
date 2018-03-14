@@ -1,0 +1,149 @@
+body,
+html {
+  background: #bfb5af;
+}
+#main {
+  max-width: 800px;
+  width: 80%;
+  margin: 45px auto;
+}
+#input-wrapper {
+  position: relative;
+}
+#input-wrapper::after {
+  content: " ";
+  background: url("../img/zoopdog_clearbg.png");
+  background-repeat: no-repeat;
+  background-position: bottom 20px right 20px;
+  background-size: 70px 70px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  bottom: 0;
+  right: 0;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+#input-wrapper #input {
+  background: #ece2d0;
+  width: calc(100% - 10px);
+  margin: 5px;
+  min-height: 125px;
+  padding: 10px 20px;
+  font-size: 16pt;
+  font-weight: 300;
+  resize: vertical;
+  border: none;
+  border-radius: 15px 15px 15px 15px;
+  position: relative;
+}
+#toggle-row {
+  text-align: center;
+  margin: 0 10px 10px;
+}
+#toggle-row .button {
+  transition: all 0.3s ease;
+  margin: 0 3px;
+  padding: 3px 10px;
+  border-radius: 5px 5px 5px 5px;
+  color: #ece2d0;
+  font-family: "Fira Sans", sans-serif;
+  display: inline-block;
+  cursor: pointer;
+}
+#toggle-row .button.on {
+  background: #0685aa;
+  color: #fff;
+  font-weight: 800;
+}
+#toggle-row .button:hover {
+  transition: none;
+  background: #5bb1b7;
+  color: #fff;
+}
+#output-row {
+  display: -webkit-flex;
+  display: flex;
+  background: #bfb5af;
+  position: relative;
+  z-index: 2;
+}
+#output-row .block {
+  background: none;
+  transition: all 0.75s ease;
+  opacity: 0;
+  display: none;
+}
+#output-row .block h1 {
+  text-align: center;
+  margin: 0 5px;
+  background: #5bb1b7;
+  color: #96cdd1;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+#output-row .block .pron {
+  border-radius: 0 0 10px 10px;
+  padding: 30px 10px 0;
+  margin: 0 5px -30px;
+  background: #ece2d0;
+  font-size: 16pt;
+  user-select: none;
+  cursor: default;
+  position: relative;
+  min-height: 110px;
+}
+#output-row .block .pron.homophones {
+  margin-bottom: 0;
+}
+#output-row .block .pron > div {
+  margin-bottom: 30px;
+}
+#output-row .block .pron p.homophone {
+  padding: 0 0 10px;
+}
+#output-row .block .pron .total {
+  background: #bfb5af;
+  color: #f2ece1;
+  border-radius: 5px 5px 5px 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  font-size: 12pt;
+  font-weight: 800;
+}
+#output-row .block .pron .ipa {
+  font-family: "Charis SIL", "CharisSILW", "Lucida Grande", "Lucida Sans Unicode", "Arial Unicode MS", sans-serif;
+  background: #5bb1b7;
+  color: #fff;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px 15px 5px;
+  font-size: 14pt;
+}
+#output-row .block .pron .warning::after {
+  background: #b6638f;
+  color: #e3c4d5;
+  text-align: right;
+  border-radius: 5px 5px 5px 5px;
+  max-width: 80%;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  padding: 5px;
+  font-size: 12pt;
+  font-weight: 800;
+  box-sizing: content-box;
+  content: 'The number of results is too large to show.';
+}
+footer {
+  z-index: 1;
+}
+footer > div {
+  background: #f2ece1;
+}
+footer:hover {
+  z-index: 300000000;
+}

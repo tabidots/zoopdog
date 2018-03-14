@@ -1,0 +1,22 @@
+//output: index.html, pretty: false
+
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    title Zoopdog, a Vietnamese-English popup dictionary
+    include meta
+
+  body
+    include includes
+    #container
+      #logo
+      p.subtitle
+        | công cụ&nbsp;
+        span.emph giúp đọc
+        | &nbsp;cho người học tiếng Việt
+      h1.main-header Zoopdog
+      p.subtitle tools to help people learn to read Vietnamese
+      #chrome-store-badge
+        a(href="https://chrome.google.com/webstore/detail/zoopdog/dpdbckfclpbpaklnobmmhjbpghcilbki")
+          img(src="img/chromestorebadge496x150.png", width="206", height="58")

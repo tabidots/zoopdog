@@ -1,0 +1,134 @@
+// out: pronunciation.css
+
+@import colors
+
+body, html
+  background $darkneutral
+
+#main
+  max-width 800px
+  width 80%
+  margin 45px auto
+
+#input-wrapper
+  position relative
+  &::after
+    content " "
+    background url('../img/zoopdog_clearbg.png')
+    background-repeat no-repeat
+    background-position bottom 20px right 20px
+    background-size 70px 70px
+    width 100%
+    height 100%
+    opacity 0.3
+    bottom 0
+    right 0
+    display block
+    position absolute
+    z-index 2
+    pointer-events none
+  #input
+    background #ECE2D0
+    width calc(100% - 10px)
+    margin 5px
+    min-height 125px
+    padding 10px 20px
+    font-size 16pt
+    font-weight 300
+    resize vertical
+    border none
+    border-radius 15px 15px 15px 15px
+    position relative
+
+#toggle-row
+  text-align center
+  margin 0 10px 10px
+  .button
+    transition all 0.3s ease
+    margin 0 3px
+    padding 3px 10px
+    border-radius 5px 5px 5px 5px
+    color $lightneutral
+    font-family "Fira Sans", sans-serif
+    display inline-block
+    cursor pointer
+    &.on
+      background #0685AA
+      color white
+      font-weight 800
+    &:hover
+      transition none
+      background #5BB1B7
+      color white
+#output-row
+  display -webkit-flex
+  display flex
+  background $darkneutral
+  position relative
+  z-index 2
+  .block
+    background none
+    transition all 0.75s ease
+    opacity 0
+    display none
+    h1
+      text-align center
+      margin 0 5px
+      background #5BB1B7
+      color #96CDD1
+      padding 10px
+      border-radius 10px 10px 0 0
+    .pron
+      border-radius 0 0 10px 10px
+      padding 30px 10px 0
+      margin 0 5px -30px // not exactly sure about the reason for the need for neg bottom margin but it works
+      background #ECE2D0
+      font-size 16pt
+      user-select none
+      cursor default
+      position relative
+      min-height 110px
+      &.homophones
+        margin-bottom 0
+      & > div
+        margin-bottom 30px
+      p.homophone
+        padding 0 0 10px
+      .total
+        background $darkneutral
+        color $verylightneutral
+        border-radius 5px 5px 5px 5px
+        position absolute
+        top 10px
+        right 10px
+        padding 5px
+        font-size 12pt
+        font-weight 800
+      .ipa
+        font-family "Charis SIL", "CharisSILW", "Lucida Grande", "Lucida Sans Unicode", "Arial Unicode MS", sans-serif
+        background $lightblue
+        color white
+        border-radius 5px 5px 5px 5px
+        padding 10px 15px 5px
+        font-size 14pt
+      .warning::after
+        background $lightred
+        color $verylightred
+        text-align right
+        border-radius 5px 5px 5px 5px
+        max-width 80%
+        position absolute
+        top 50px
+        right 10px
+        padding 5px
+        font-size 12pt
+        font-weight 800
+        box-sizing content-box
+        content 'The number of results is too large to show.'
+
+footer
+  z-index 1
+  & > div
+    background $verylightneutral
+  &:hover
+    z-index 300000000
