@@ -5,10 +5,16 @@ const getWordAndContext = (mouse) => { // adapted from https://stackoverflow.com
 
   if (document.caretPositionFromPoint) {    // Firefox
     range = document.caretPositionFromPoint(mouse.x, mouse.y)
+    if (!range) {
+      return false
+    }
     textNode = range.offsetNode
     offset = range.offset
   } else if (document.caretRangeFromPoint) {     // Chrome
     range = document.caretRangeFromPoint(mouse.x, mouse.y)
+    if (!range) {
+      return false
+    }
     textNode = range.startContainer
     offset = range.startOffset
   }
@@ -64,6 +70,11 @@ window.onload = function() {
 
   this.highlighter = new Highlighter()
   this.popup = new ResultFrame()
+
+  chrome.runtime.sendMessage({type: 'get-dialect'}, function(response) {
+    this.popup.dialect = response.dialect
+  })
+
   chrome.runtime.sendMessage({type: 'check-globally-on'}, function(response) {
     this.zoopdogIsOn = response.status
   })
@@ -143,8 +154,10 @@ window.onload = function() {
         window.popup.hide()
       }
     } else if (message.type === 'toggle-lock') {
-      this.highlighter.toggleLock()
-      this.popup.toggleLock()
+      window.highlighter.toggleLock()
+      window.popup.toggleLock()
+    } else if (message.type === 'set-dialect') {
+      window.popup.dialect = message.dialect
     }
 
   })

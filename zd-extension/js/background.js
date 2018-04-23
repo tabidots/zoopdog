@@ -107,7 +107,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     myDialect = message.dialect
     chrome.storage.sync.set({
       myDialect: message.dialect
-    }, function(){})
+    }, function(){
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        chrome.tabs.sendMessage(tabs[0].id, {type: 'set-dialect', dialect: message.dialect}, function(response){})
+      })
+    })
   }
 
   return true

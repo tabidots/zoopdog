@@ -7,7 +7,6 @@ window.onload = function() {
     document.querySelector(`#dialect-menu option[value=${response.dialect}]`).selected = true
   })
 
-
   document.getElementById("zoopdog-switch").addEventListener("click", function(){
     chrome.runtime.sendMessage({type: 'toggle-zoopdog'}, function(response) {})
   })
@@ -15,10 +14,10 @@ window.onload = function() {
     chrome.runtime.sendMessage({type: 'reload-db'}, function(response) {})
   })
   document.getElementById("dialect-menu").addEventListener("change", function(){
-    chrome.runtime.sendMessage({type: 'set-dialect', dialect: this.value}, function(response) {})
+    chrome.runtime.sendMessage({type: 'set-dialect', dialect: document.getElementById("dialect-menu").value}, function(response) {})
   })
   document.getElementById("open-pron-guide").addEventListener("click", function(){
-    chrome.tabs.create({ url: "http://tabidots.io/zoopdog/pronguide.html" });
+    chrome.tabs.create({ url: "https://tabidots.github.io/zoopdog/pronguide.html" });
   })
 
 }

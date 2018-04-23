@@ -28,8 +28,8 @@ class ResultFrame { // adapted from https://github.com/FooSoft/yomichan/blob/mas
 
   populate(results) {
     return this.inject().then(() => {
-      this.container.contentWindow.postMessage({type: 'populate', results: results}, '*')
-    })
+      this.container.contentWindow.postMessage({type: 'populate', results: results, dialect: this.dialect}, '*')
+      })
   }
 
   show(rect) {
