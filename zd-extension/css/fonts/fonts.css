@@ -75,3 +75,14 @@ of the license along with this Font Software. If this is not the case, go to
 	font-style: italic;
 	src: url(CharisSIL-BI.woff);
 }
+
+@font-face {
+  font-family: "Fira Sans";
+  src: url(FiraSans-Light.woff);
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-weight: bold;
+  src: url(FiraSans-ExtraBold.woff);
+}

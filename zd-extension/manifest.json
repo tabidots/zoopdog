@@ -18,7 +18,7 @@
         "<all_urls>"
       ],
       "exclude_matches": [
-        "*://*/zoopdog/*"
+        "https://tabidots.github.io/zoopdog/*"
       ],
       "js": [
         "js/lib/handlebars.min.js",
@@ -60,8 +60,5 @@
   "permissions": [
     "activeTab",
     "storage"
-  ],
-  "host_permissions": [
-    "https://ajax.googleapis.com/*"
   ]
 }
