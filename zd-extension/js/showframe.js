@@ -5,7 +5,7 @@ class ResultFrame { // adapted from https://github.com/FooSoft/yomichan/blob/mas
     this.container.id = 'zoopdog-popup'
     this.container.addEventListener('mousedown', e => e.stopPropagation())
     this.container.addEventListener('scroll', e => e.stopPropagation())
-    this.container.setAttribute('src', srcUrl || chrome.extension.getURL('../frame.html'))
+    this.container.setAttribute('src', srcUrl || chrome.runtime.getURL('../frame.html'))
     this.container.style.width = '0px'
     this.container.style.height = '0px'
     this.injected = null

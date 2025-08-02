@@ -3,6 +3,7 @@ const chars = /[-\u00D0A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãè�
 const getWordAndContext = (mouse) => { // adapted from https://stackoverflow.com/a/30606508
   var range, textNode, offset;
 
+  // Use modern APIs with fallbacks
   if (document.caretPositionFromPoint) {    // Firefox
     range = document.caretPositionFromPoint(mouse.x, mouse.y)
     if (!range) {
@@ -10,21 +11,25 @@ const getWordAndContext = (mouse) => { // adapted from https://stackoverflow.com
     }
     textNode = range.offsetNode
     offset = range.offset
-  } else if (document.caretRangeFromPoint) {     // Chrome
+  } else if (document.caretRangeFromPoint) {     // Chrome (deprecated but still works)
     range = document.caretRangeFromPoint(mouse.x, mouse.y)
     if (!range) {
       return false
     }
     textNode = range.startContainer
     offset = range.startOffset
+  } else {
+    // Fallback for browsers that don't support either
+    return false
   }
+
   //data contains a full sentence
   //offset represent the cursor position in this sentence
   var data = textNode.data,
-      i = offset,
-      begin,
-      end,
-      clauseEnd;
+    i = offset,
+    begin,
+    end,
+    clauseEnd;
 
   if (data === undefined || i === data.length) return false
   if (data[i] === " ") return false
@@ -45,15 +50,15 @@ const getWordAndContext = (mouse) => { // adapted from https://stackoverflow.com
 
   //Return the word under the mouse cursor
   var word = data.substring(begin, end).trim(),
-      context = data.substring(begin, contextEnd).trim()
-  return {word: word, context: context, node: textNode, begin: begin}
+    context = data.substring(begin, contextEnd).trim()
+  return { word: word, context: context, node: textNode, begin: begin }
 }
 
 const generateCandidates = (context, howManyWords) => {
   var split = context.split(/\s+/),
-      candidates = []
-  for (i = 0; i < howManyWords && candidates.length < split.length; i ++) {
-    candidates.push(split.slice(0, i+1).join(" ").replace(/[Đ\u00D0]/ug, "đ"))
+    candidates = []
+  for (i = 0; i < howManyWords && candidates.length < split.length; i++) {
+    candidates.push(split.slice(0, i + 1).join(" ").replace(/[Đ\u00D0]/ug, "đ"))
   }
   return candidates
 }
@@ -61,53 +66,54 @@ const generateCandidates = (context, howManyWords) => {
 const mouseInRects = (mouse, rects) => {
   for (var rect of rects) {
     if (rect.left <= mouse.x && mouse.x <= rect.right &&
-        rect.top <= mouse.y && mouse.y <= rect.bottom) return true
+      rect.top <= mouse.y && mouse.y <= rect.bottom) return true
   }
   return false
 }
 
-window.onload = function() {
+window.onload = function () {
 
   this.highlighter = new Highlighter()
   this.popup = new ResultFrame()
 
-  chrome.runtime.sendMessage({type: 'get-dialect'}, function(response) {
+  chrome.runtime.sendMessage({ type: 'get-dialect' }, function (response) {
     this.popup.dialect = response.dialect
   })
 
-  chrome.runtime.sendMessage({type: 'check-globally-on'}, function(response) {
+  chrome.runtime.sendMessage({ type: 'check-globally-on' }, function (response) {
     this.zoopdogIsOn = response.status
   })
 
-  this.addEventListener('resize', function(e){
+  this.addEventListener('resize', function (e) {
     this.highlighter.off()
     this.popup.hide()
     this.highlighter = new Highlighter()
   })
 
-  this.addEventListener('scroll', function(e){
+  this.addEventListener('scroll', function (e) {
     this.highlighter.off()
     this.popup.hide()
   })
 
-  this.addEventListener('mouseout', function(e){
+  this.addEventListener('mouseout', function (e) {
     this.highlighter.off()
     this.popup.hide()
   })
 
+  // Updated keydown handler - use e.key instead of e.which
   window.addEventListener('keydown', e => {
-    if (e.which === 16) {
+    if (e.key === 'Shift') {
       this.highlighter.toggleLock()
       this.popup.toggleLock()
     }
   })
 
   var oldWord
-  this.addEventListener('mousemove', function(e){
+  this.addEventListener('mousemove', function (e) {
 
     if (this.popup.locked || !this.zoopdogIsOn) return true
 
-    var mouse = {x: e.clientX, y: e.clientY}
+    var mouse = { x: e.clientX, y: e.clientY }
     if (this.highlighter.highlights.length && mouseInRects(mouse, this.highlighter.highlights)) return true
 
     var origin = getWordAndContext(mouse)
@@ -124,10 +130,10 @@ window.onload = function() {
     oldWord = origin.word
 
     var searchTerm = origin.word.replace(/[Đ\u00D0]/ug, "đ")
-    chrome.runtime.sendMessage({type: 'initial-search', term: searchTerm}, function(response) {
+    chrome.runtime.sendMessage({ type: 'initial-search', term: searchTerm }, function (response) {
       if (response.type === "range") {
         var candidates = generateCandidates(origin.context, response.range)
-        chrome.runtime.sendMessage({type: 'second-search', candidates: candidates}, function(response) {
+        chrome.runtime.sendMessage({ type: 'second-search', candidates: candidates }, function (response) {
           if (response.type === "results" && response.results.length) {
             var numOfWordsToHighlight = response.results[0]['vn'].split(" ").length
             this.highlighter.on(origin.node, origin.begin, numOfWordsToHighlight)
